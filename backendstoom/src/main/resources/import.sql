@@ -1,0 +1,3 @@
+insert into endereco(id, city, complement, country, latitude, longitude, NEIGHBOURHOOD, number, state, street_name, zipcode) values(seq_endereco.nextval, 'São Paulo', '10', 'Brasil', 10.2, 11.2, 'teste', 16, 'SP', 'Teste', 140560);
+insert into endereco(id, city, complement, country, latitude, longitude, NEIGHBOURHOOD, number, state, street_name, zipcode) values(seq_endereco.nextval, 'Brasilia', '11', 'Brasil', 10.3, 11.3, 'teste 1', 16, 'SP', 'Teste 1', 140430);
+insert into endereco(id, city, complement, country, latitude, longitude, NEIGHBOURHOOD, number, state, street_name, zipcode) values(seq_endereco.nextval, 'Mina Gerais', '12', 'Brasil', 10.4, 11.4, 'teste 2', 16, 'MG', 'Teste 2', 14590);

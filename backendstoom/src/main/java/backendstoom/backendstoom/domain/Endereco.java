@@ -9,8 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.validation.constraints.NotEmpty;
-
+import javax.validation.constraints.NotNull;
 
 /**
  * 
@@ -31,34 +30,32 @@ public class Endereco implements Serializable {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_endereco")
 	private Long id;
 	
-	@NotEmpty(message = "Campo streetName é obrigatório.")
+	@NotNull(message = "Campo streetName é obrigatório.")
 	@Column(name = "streetName", length=50, nullable=false)
 	private String streetName;
 	
-	@NotEmpty(message = "Campo number é obrigatório.")
-	@Column(name = "number", nullable=false)
+	@NotNull(message = "Campo number é obrigatório.")
 	private Long number;
 	
 	private String complement;
 	
-	@NotEmpty(message = "Campo neighbourhood é obrigatório.")
+	@NotNull(message = "Campo neighbourhood é obrigatório.")
 	@Column(name = "neighbourhood", length=50, nullable=false)
 	private String neighbourhood;
 	
-	@NotEmpty(message = "Campo city é obrigatório.")
+	@NotNull(message = "Campo city é obrigatório.")
 	@Column(name = "city", length=50, nullable=false)
 	private String city;
 	
-	@NotEmpty(message = "Campo state é obrigatório.")
+	@NotNull(message = "Campo state é obrigatório.")
 	@Column(name = "state", length=50, nullable=false)
 	private String state;
 	
-	@NotEmpty(message = "Campo country é obrigatório.")
+	@NotNull(message = "Campo country é obrigatório.")
 	@Column(name = "country", length=30, nullable=false)
 	private String country;
 	
-	@NotEmpty(message = "Campo zipcode é obrigatório.")
-	@Column(name = "zipcode", nullable=false)
+	@NotNull(message = "Campo zipcode é obrigatório.")
 	private Long zipcode;
 	
 	private Long latitude;
