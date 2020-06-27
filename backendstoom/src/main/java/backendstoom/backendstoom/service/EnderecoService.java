@@ -1,6 +1,7 @@
 package backendstoom.backendstoom.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,10 @@ public class EnderecoService {
 	
 	public Endereco findByEndereco(Endereco endereco) {
 		return enderecoRepository.findByEndereco(endereco.getStreetName());
+	}
+	
+	public Optional<Endereco> findById(Long id) {
+		return enderecoRepository.findById(id);
 	}
 	
 	public List<Endereco> list() {

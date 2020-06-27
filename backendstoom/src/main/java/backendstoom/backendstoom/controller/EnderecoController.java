@@ -1,6 +1,7 @@
 package backendstoom.backendstoom.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -71,6 +72,21 @@ public class EnderecoController {
 
 		return enderecos;
 	}
+	
+	@GetMapping("/consultar/{id}")
+	public Optional<Endereco> findOne(@PathVariable Long id) {
+		Optional<Endereco> endereco = null;
+		
+		try {
+			endereco = enderecoService.findById(id);
+		} catch (Exception be) {
+			logger.error("Erro ao pesquisar endereço com o id {0} " + be.getMessage(), id);
+			new Exception("Erro na rotina de pesquisar endereço. " + be.getMessage());
+		}
+
+		return endereco;
+	}
+
 
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable Long id) {
